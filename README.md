@@ -138,4 +138,58 @@ Example:
 ```
 python scripts/evaluate.py --model_path saved_models/best_model --dataset_name molweni --split test --output_file predictions.json
 ```
-The model will be loaded in the saved_models/best_model path, evaluated on the test set of the molweni dataset, and the predictions will be saved in predictions.json.  
+The model will be loaded in the saved_models/best_model path, evaluated on the test set of the molweni dataset, and the predictions will be saved in predictions.json.
+
+
+## Inference
+1. Non-interactive mode:
+```
+python scripts/inference.py --model_path /path/to/your/model --context_file data/test_context.json --question "What is the answer?
+```
+Replace /path/to/your/model with your actual model save path. data/test_context.json is a JSON file containing the context of the conversation in the following format:  
+```
+[
+    {"speaker": "A", "utterance": "Hello, how are you?"},
+    {"speaker": "B", "utterance": "I'm fine, thanks. And you?"},
+    {"speaker": "A", "utterance": "I'm good too."}
+]
+```
+
+2. Interaction Model:
+```
+python scripts/inference.py --model_path /path/to/your/model --interactive
+```
+
+### Example:  
+Non-interactive mode example:  
+The data/test_context.json file has the following contents:  
+```
+[
+    {"speaker": "A", "utterance": "What's your favorite color?"},
+    {"speaker": "B", "utterance": "My favorite color is blue."}
+]
+```
+Run the following command:  
+```
+python scripts/inference.py --model_path saved_models/best_model --context_file data/test_context.json --question "What is B's favorite color?"
+```
+Output:
+```
+Context: [{'speaker': 'A', 'utterance': "What's your favorite color?"}, {'speaker': 'B', 'utterance': 'My favorite color is blue.'}]
+Question: What is B's favorite color?
+Answer: blue.
+```
+
+Examples of interaction patterns:  
+```
+python scripts/inference.py --model_path saved_models/best_model --interactive
+```
+Then follow the prompts to enter:  
+```
+Entering interactive mode. Type 'exit' to quit.
+Enter the dialog context (or 'load' to load from file): load
+Enter the context file path: data/test_context.json
+Enter your question: What is B's favorite color?
+Answer: blue.
+Enter the dialog context (or 'load' to load from file):
+```
