@@ -107,11 +107,22 @@ The preprocessed data will be saved in the corresponding subfolders under the da
 
 
 ## Model Training
-1. Modify configuration: Modify the configuration parameters in config.py file, such as dataset path, model parameters, training parameters, etc. as needed.  
-2. Run the training script.
+1. Make sure you have prepared the data and code as per the previous steps.  
+2. Modify the configuration parameters in the config.py file as needed.
+3. Run the following command to start training:  
+Using losdf models trained on the molweni dataset  
 ```
-python scripts/train.py
+python scripts/train.py --dataset_name molweni --model_type losdf
 ```
+Training on the friendsqa dataset using the electra_baseline model  
+```
+python scripts/train.py --dataset_name friendsqa --model_type electra_baseline
+```
+Using losdf models trained on the dailydialog dataset 
+```
+python scripts/train.py --dataset_name dailydialog --model_type losdf
+```
+
 
 ## Model evaluation
 Run the evaluation script:
