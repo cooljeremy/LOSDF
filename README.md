@@ -16,10 +16,6 @@ LOSDF/
 │   │   ├── train.json
 │   │   ├── dev.json
 │   │   └── test.json
-│   ├── dream/
-│   │   ├── train.json
-│   │   ├── dev.json
-│   │   └── test.json
 │   └── dailydialog/
 │       ├── train.json
 │       ├── dev.json
