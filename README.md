@@ -91,6 +91,19 @@ Data is in a uniform JSON format:
     "answer": "I'm fine, thanks."
 }
 ```
+Usage:
+1.Download the raw dataset to the data/ folder and organize it according to the directory structure described in README.md.
+2.Modify the configuration parameters in the config.py file as needed.
+3.Run the following command for data preprocessing:
+```
+python scripts/preprocess_data.py --dataset molweni
+```
+Specify the raw data and output path (optional):
+```
+python scripts/preprocess_data.py --dataset all --data_dir /path/to/raw/data --output_dir /path/to/processed/data
+```
+The preprocessed data will be saved in the corresponding subfolders under the data/ folder, e.g. data/molweni/train.json, data/molweni/dev.json, data/molweni/test.json
+
 
 
 ## Model Training
