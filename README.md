@@ -92,9 +92,9 @@ Data is in a uniform JSON format:
 }
 ```
 Usage:
-1.Download the raw dataset to the data/ folder and organize it according to the directory structure described in README.md.
-2.Modify the configuration parameters in the config.py file as needed.
-3.Run the following command for data preprocessing:
+1.Download the raw dataset to the data/ folder and organize it according to the directory structure described in README.md.  
+2.Modify the configuration parameters in the config.py file as needed.  
+3.Run the following command for data preprocessing:  
 ```
 python scripts/preprocess_data.py --dataset molweni
 ```
