@@ -125,8 +125,17 @@ python scripts/train.py --dataset_name dailydialog --model_type losdf
 
 
 ## Model evaluation
-Run the evaluation script:
+Make sure you have trained the LOSDF model and got the saved model parameters.  
+Run the following command for evaluation:  
 ```
-python scripts/evaluate.py
+python scripts/evaluate.py --model_path /path/to/your/model --dataset_name molweni --split test
 ```
+Replace /path/to/your/model with the path where your actual model is stored, molweni with the dataset you want to evaluate, and test with dev or test.  
+
 The evaluation results will be output to the console and a log will be generated in the logs/ folder.
+
+Example:  
+```
+python scripts/evaluate.py --model_path saved_models/best_model --dataset_name molweni --split test --output_file predictions.json
+```
+The model will be loaded in the saved_models/best_model path, evaluated on the test set of the molweni dataset, and the predictions will be saved in predictions.json.  
