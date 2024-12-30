@@ -91,7 +91,7 @@ Data is in a uniform JSON format:
     "answer": "I'm fine, thanks."
 }
 ```
-Usage:
+Usage:  
 1.Download the raw dataset to the data/ folder and organize it according to the directory structure described in README.md.  
 2.Modify the configuration parameters in the config.py file as needed.  
 3.Run the following command for data preprocessing:  
@@ -125,8 +125,8 @@ python scripts/train.py --dataset_name dailydialog --model_type losdf
 
 
 ## Model evaluation
-Make sure you have trained the LOSDF model and got the saved model parameters.  
-Run the following command for evaluation:  
+1. Make sure you have trained the LOSDF model and got the saved model parameters.  
+2. Run the following command for evaluation:  
 ```
 python scripts/evaluate.py --model_path /path/to/your/model --dataset_name molweni --split test
 ```
