@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project proposes a Logical Optimization and Semantic Decoupling Framework for Multi-party Dialogue Q&A (LOSDF).LOSDF enhances the model's ability to identify logical structures and transitions in a dialogue by integrating multi-party attentional mechanisms to manage dynamic and complex information flows across multiple speakers. In addition, the challenge of different linguistic styles between speakers is addressed by incorporating semantic rewriting mechanisms to ensure that responses are not only contextually relevant but also stylistically consistent with the speaker's expression. The information decoupling module is a key innovation of LOSDF, which excels at separating relevant information from the pervasive noise common in MPCs, thus extracting information relevant to the current query more accurately and efficiently.
+This paper proposes a Logical Optimization and Semantic Decoupling Framework for Multi-party Dialogue Q&A (LOSDF).LOSDF enhances the model's ability to identify logical structures and transitions in a dialogue by integrating multi-party attentional mechanisms to manage dynamic and complex information flows across multiple speakers. In addition, the challenge of different linguistic styles between speakers is addressed by incorporating semantic rewriting mechanisms to ensure that responses are not only contextually relevant but also stylistically consistent with the speaker's expression. The information decoupling module is a key innovation of LOSDF, which excels at separating relevant information from the pervasive noise common in MPCs, thus extracting information relevant to the current query more accurately and efficiently.
 
 ## Code Structure
 ```
@@ -47,7 +47,7 @@ venv\Scripts\activate     # Windows
 ### 2.Installation of dependency packages:
 pip install -r requirements.txt
 
-## Data preparation
+## Data Preparation
 
 The following three datasets are used in this project.  
 Molweni: a multi-party conversational Q&A dataset derived from the Ubuntu forums, which is skewed towards technical discussions.  
@@ -120,7 +120,7 @@ python scripts/train.py --dataset_name dailydialog --model_type losdf
 ```
 
 
-## Model evaluation
+## Model Evaluation
 1. Make sure you have trained the LOSDF model and got the saved model parameters.  
 2. Run the following command for evaluation:  
 ```
@@ -138,7 +138,7 @@ The model will be loaded in the saved_models/best_model path, evaluated on the t
 
 
 ## Inference
-1. Non-interactive mode:
+### 1. Non-interactive Mode:
 ```
 python scripts/inference.py --model_path /path/to/your/model --context_file data/test_context.json --question "What is the answer?
 ```
@@ -151,7 +151,7 @@ Replace /path/to/your/model with your actual model save path. data/test_context.
 ]
 ```
 
-2. Interaction Model:
+### 2. Interaction Model:
 ```
 python scripts/inference.py --model_path /path/to/your/model --interactive
 ```
